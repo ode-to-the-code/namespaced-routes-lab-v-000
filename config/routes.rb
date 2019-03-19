@@ -5,6 +5,11 @@ Rails.application.routes.draw do
     resources :preferences
   end
 
-  resources :artists
+  resources :artists do
+    resources :songs, only: [:show, :index]
+    # resources :songs
+
+  end
+
   resources :songs
 end
